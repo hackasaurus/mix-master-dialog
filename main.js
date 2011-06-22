@@ -2,7 +2,7 @@
   var $ = jQuery;
 
   jQuery.setupUI = function(options) {
-    var languages = options.languages || ["en-US"];
+    var languages = options.languages || ["en"];
     var ui = {
       hud: jQuery.hudOverlay({
         defaultContent: options.defaultHudContent,
@@ -69,6 +69,7 @@
         skeleton: $("#skeleton div.content"),
         defaultHudContent: data.instructions,
         defaultEditorContent: data.startHTML,
+        languages: data.languages,
         idToEdit: "editor"
       });
     }
