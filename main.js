@@ -3,10 +3,14 @@
 
   jQuery.setupUI = function(options) {
     var languages = options.languages || ["en"];
+    var locale = jQuery.localization.createLocale(languages);
+
+    $(document.body).localize(locale);
+
     var ui = {
       hud: jQuery.hudOverlay({
         defaultContent: options.defaultHudContent,
-        locale: jQuery.localization.createLocale(languages)
+        locale: locale
       }),
       focusedOverlay: jQuery.focusedOverlay(),
       destroy: function() {
